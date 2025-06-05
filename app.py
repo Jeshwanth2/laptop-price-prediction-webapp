@@ -79,7 +79,7 @@ def extract_resolution(resolution_str):
     res = re.findall(r'(\d+x\d+)', resolution_str)
     return res[0] if res else '1366x768'
 
-# Add engineered features for dropdowns
+#engineered features for dropdowns
 df['Memory_Type'] = df['Memory'].apply(extract_memory_type)
 df['Memory_Size_GB'] = df['Memory'].apply(extract_memory_size)
 df['CPU_Brand'] = df['Cpu'].apply(extract_cpu_brand)
@@ -123,7 +123,7 @@ with st.form("laptop_specs"):
     submit_button = st.form_submit_button("Predict Price (€)")
 
 if submit_button:
-    # Prepare input as a dict with the same keys as feature_columns
+    #  feature_columns
     input_features = {
         'Company': company,
         'TypeName': type_name,
@@ -150,6 +150,7 @@ if submit_button:
 # Footer
 st.markdown("""
     <div class="footer-box">
-    © 2025 Laptop Price Predictor | Linear Regression Model
+    © 2025 Laptop Price Predictor | Linear Regression Model<br>
+    Developed by <b>Jeshwanth Basutkar</b>
     </div>
 """, unsafe_allow_html=True)
